@@ -8,7 +8,7 @@ export default function Hero() {
   const canvasRef = useRef(null)
 
   useEffect(() => {
-    // GSAP: вращение текста
+    // вращение текста
     const ringTween = gsap.to(ringRef.current, {
       rotate: 360,
       duration: 30,
@@ -19,7 +19,7 @@ export default function Hero() {
     const canvas = canvasRef.current
     if (!canvas) return () => ringTween.kill()
 
-    // THREE/WebGL: лёгкий wireframe-объект на фоне + параллакс
+    // лёгкий wireframe-объект на фоне + параллакс этой хуйни
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -100,7 +100,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-950 via-cyan-900 to-emerald-900">
       <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />
 
-      {/* Фоновые изображения (лёгкий шум + техно) */}
+      {/* Фоновые изображения */}
       <div
         className="absolute inset-0 z-[1] opacity-25 bg-cover bg-center"
         style={{
@@ -155,7 +155,7 @@ export default function Hero() {
           Компьютерные науки и прикладная математика
         </motion.p>
 
-        {/* Mobile swipe chips */}
+        {/* Мобилка */}
         <div className="mt-10 hidden md:flex justify-center gap-6 flex-wrap">
           <span className="px-6 py-3 rounded-full border border-white/20 backdrop-blur">
             МАИ
