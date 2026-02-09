@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 
-// Фича, ради которой можно заходить ежедневно: задача дня + серия.
-// Детерминированная (от даты) — без бэкенда.
+// Фича ради которой можно заходить ежедневно: мб задача дня +серия
+
 
 function getDayKey() {
   const d = new Date()
@@ -47,7 +47,7 @@ const bank = [
 ]
 
 function pickQuestion(dayKey) {
-  // простой хеш строки -> индекс
+  // хеш -> индекст? либо поменять потом?
   let h = 0
   for (let i = 0; i < dayKey.length; i++) h = (h * 31 + dayKey.charCodeAt(i)) >>> 0
   return bank[h % bank.length]
@@ -75,7 +75,7 @@ export default function Daily() {
 
     if (norm.toLowerCase() === ans.toLowerCase()) {
       setStatus('ok')
-      // обновим серию, но только 1 раз в день
+      // обновим серию
       const raw = localStorage.getItem('daily_streak')
       const parsed = raw ? JSON.parse(raw) : { streak: 0, last: null }
       if (parsed.last !== dayKey) {
