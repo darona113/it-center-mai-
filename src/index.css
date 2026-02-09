@@ -11,7 +11,7 @@ body {
   overscroll-behavior: none;
 }
 
-/* Layout helpers */
+/* фоны+ слои, мб добавить по дизайну*/
 .container {
   @apply max-w-7xl mx-auto px-6;
 }
@@ -40,7 +40,7 @@ body {
   @apply mt-4 text-base md:text-lg text-white/75 leading-relaxed;
 }
 
-/* UI atoms */
+/* UIшечкиииии*/
 .card {
   @apply rounded-3xl bg-white/5 border border-white/10 shadow-[0_18px_60px_rgba(0,0,0,0.35)] backdrop-blur;
 }
