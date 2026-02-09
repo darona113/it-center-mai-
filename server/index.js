@@ -5,9 +5,8 @@ import fetch from 'node-fetch'
 const app = express()
 app.use(cors())
 
-// 1) Создай бота через @BotFather и получи токен
-// 2) Добавь бота в админы канала (или хотя бы участником, в зависимости от настроек)
-// 3) Вставь токен ниже
+
+// надо вставить токен
 const TOKEN = process.env.TG_BOT_TOKEN || 'PASTE_YOUR_BOT_TOKEN_HERE'
 
 // Канал: @itcmai
@@ -18,8 +17,7 @@ app.get('/api/telegram', async (req, res) => {
     return res.status(500).json({ error: 'Set TG_BOT_TOKEN env var or edit server/index.js' })
   }
 
-  // Внимание: Bot API не даёт полноценную "историю" канала без условий,
-  // но posts обычно приходят через getUpdates, если бот видит сообщения.
+
   const r = await fetch(`https://api.telegram.org/bot${TOKEN}/getUpdates`)
   const data = await r.json()
 
